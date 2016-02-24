@@ -1,0 +1,69 @@
+#!/bin/bash
+
+GITINITVERSION="V02"
+
+echo ""
+echo ""
+echo ""
+echo "[GITINIT SCRIPT $GITINITVERSION]"
+echo ""
+echo ""
+echo ""
+echo "TO USE:"
+echo ""
+echo ""
+echo "1. ENSURE YOU HAVE AN EXISTING LOCAL SOURCE DIRECTORY"
+echo "2. CREATE A NEW EMPTY REPOSITORY ON GITHUB:"
+echo "   DO NOT INITIALIZE THE REPOSITORY WITH A README"
+echo "3. COPY THIS GITINIT SCRIPT INTO YOUR EXISTING SOURCE DIRECTORY"
+echo "4. RUN ./gitinit FROM YOUR EXISTING SOURCE DIRECTORY IN TERMINAL"
+echo ""
+echo ""
+echo "DO NOT CONTINUE IF YOU HAVE NOT DONE ALL THESE"
+echo "INSTEAD PRESS [CTRL + C] TO EXIT" 
+echo ""
+echo ""
+
+echo "ENTER THE REPOSITORY URL NOW>  "
+read REPOSITORYURL
+
+echo ""
+echo "ENTER THE README FILENAME NOW>  "
+read READMEFILENAME
+
+echo ""
+echo "[ENTER ONE LINE OF TEXT FOR THE README>  "
+echo ""
+read READMELINE
+
+echo ""
+echo ""
+echo "ENTER A SHORT COMMIT MESSAGE>  "
+read COMMITMESSAGE
+
+echo ""
+echo "$READMELINE" >> $READMEFILENAME
+echo "" >> $READMEFILENAME
+echo "[INITIALIZED REPOSITORY WITH GITINIT SCRIPT $GITINITVERSION]" >> $READMEFILENAME
+echo "[ https://github.com/T5C2U7B/gitinit-script ]" >> $READMEFILENAME
+
+echo ".idea" >> .gitignore
+echo "*_exec" >> .gitignore
+echo "*.o" >> .gitignore
+echo "*.bak" >> .gitignore
+echo "gitinit" >> .gitignore
+
+echo ""
+git init
+git add $READMEFILENAME
+git commit -m "$COMMITMESSAGE"
+git remote add origin $REPOSITORYURL
+git push -u origin master
+
+echo ""
+echo ""
+echo "THANK YOU FOR CHOOSING GITINIT SCRIPT $GITINITVERSION"
+echo "HAVE A NICE DAY"
+echo ""
+echo ""
+
