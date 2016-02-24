@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GITINITVERSION="V03"
+GITINITVERSION="V04"
 
 echo ""
 echo ""
@@ -54,9 +54,10 @@ echo "[INITIALIZED REPOSITORY WITH GITINIT SCRIPT $GITINITVERSION]" >> $READMEFI
 echo "[ https://github.com/T5C2U7B/gitinit-script ]" >> $READMEFILENAME
 
 echo ".idea" >> .gitignore
+echo "a.out" >> .gitignore
 echo "*_exec" >> .gitignore
 echo "*.o" >> .gitignore
-echo "*.bak" >> .gitignore
+echo "*.bak*" >> .gitignore
 echo "gitinit" >> .gitignore
 
 echo ""
